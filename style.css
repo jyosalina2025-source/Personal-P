@@ -1,0 +1,97 @@
+body{
+  background-image: url("images (16).jpeg");
+  background-attachment: fixed;
+  background-size: cover
+}
+#fullname{
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+.hero-container {
+  align-items: center; /* Vertically centers the text with the image */
+  justify-content: space-around;
+  padding: 40px; /* Adds space inside the yellow box*/
+  border-radius: 15px;
+  background-color: lightyellow
+}
+
+.header{
+  color: darkblue;
+  font-family: times new roman;
+}
+
+img{
+  float: right;
+  width: 90px;
+  height: 110px;
+  padding: 15px;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+
+.buttons{
+  float: right;
+ background-color: white;
+ color: darkblue;
+ font-weight: 500;
+ width: 100px;
+ border-color: darkblue;
+  margin: 8px;
+}
+
+.buttons:hover {
+  background-color: lightblue;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow on hover */
+  transform: scale(1.05); /* Slightly increase size */
+}
+
+#page2{
+  background-image: url("lightyellow.png");
+  padding:20px;
+  justify-content: space-around;
+}
+
+.table1 {
+  border: 1px white;
+  border-collapse: collapse;
+  background-color: lightgray;
+  padding: 15px;
+  text-align: left;
+}
+
+.table1:hover {
+  background-color: lightblue;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow on hover */
+  transform: scale(1.05); /* Slightly increase size */
+}
+
+#ojt {
+  border-radius: 1px;
+  width: 205px;
+  heigth: 150px;
+}
+
+.skills{
+  border: 1px white;
+  background-color: lightgray;
+  padding: 7px;
+  margin: 5px;
+  text-align: justify;
+  border-radius: 5px
+}
+
+.skills:hover {
+ background-color: lightblue;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow on hover */
+  transform: scale(1.05); 
+}
+
+.list{
+  font-weight: bold;
+  color: darkblue; 
+ float: center; 
+}

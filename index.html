@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Portfolio</title>
+</head>
+<div id= "page1">
+<div class= "hero-container">
+<body>
+  <div  class= "header">
+  <h6 id= "fullname"> Jan Marc Yosalina <br> 1st year BS Computer Science <br>Taguig City, Philippines</h6> 
+  <hr>
+    <img src="Messenger_creation_395B751B-DDCE-4ECE-9AE5-DA5998968974.jpeg" id= "lugu">
+  <h3>Hello, I'm Jan Marc</h3> 
+  
+  <h2>Computer Science Student
+  </h2>
+  <br>
+  <button class="buttons" onclick="showPage2()">About Me</button> 
+  </div>
+</div>
+</div>
+</body>
+
+ <script>
+  function showPage2() {
+    document.getElementById("page1").style.display = "none";
+    document.getElementById("page2").style.display = "block";
+  } 
+</script>
+
+
+<! -- About me -->
+<div id="page2" style="display: none;">
+  <div class= "header">
+  <body>
+  <h2>
+    About Me
+  </h2>
+  <p>
+    I am a Computer Science student who is currently learning the fundamentals of programming and web development. I am eager to improve my skills through hands-on projects and academic activities. This portfolio reflects my growth and expericences.
+  </p>
+    
+    <h2> Projects/Experiences</h2>
+    <div class= "table1">
+    <table>
+      <tr>
+        <th style= "text-align: center;">Web Design</th>
+        </tr>
+      
+      <tr>
+       <td><img src= "ojt.jpeg" id= "ojt"> As part of my On-the-Job Training (OJT), I built a functional mock website for the Reservist Department of the Philippine Army using XAMPP. The project involved designing the user interface and developing structured web pages to simulate a real organizational system.
+    </td>
+      </tr>
+    </table>
+    </div>
+    
+   
+    <br>
+    
+    
+    <h2> Skills</h2>
+    <p style= "font-weight:400;">I am currently developing my skills and gaining experience through school projects and activities. While I am still learning, I'm motivated, eager to improve, and always willing to take on new challenges to grow my abilities.</p>
+ 
+    <table>
+      <tr>
+        <td class= "skills">Programming Skill</td>
+        <td class= "skills">Team Oriented</td>
+      </tr>
+      <tr>
+        <td class= "skills">Web Development</td>
+        <td class= "skills">Responsible</td>
+      </tr>
+    </table>
+    </div>
+      
+    <div class= "list">
+      <h2>Contacts</h2>
+      <p>Email:</p> <p style= "font-weight:400;">yosalinajanmarc4@gmail.com</p>
+      <p>Contact Number:</p> <p style= "font-weight: 400;">09687415607</p>
+      <p>Facebook:</p> <p style= "font-weight: 400;"><a href= "https://www.facebook.com/share/14cJcg5kjDs/">Jan Marc Yosalina</a></p> 
+      </p>
+  </div>   
+  </div>
+</body>
