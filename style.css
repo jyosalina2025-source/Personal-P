@@ -1,97 +1,219 @@
-body{
-  background-image: url("images (16).jpeg");
-  background-attachment: fixed;
-  background-size: cover
-}
-#fullname{
-  text-align: center;
-  margin: 20px;
-  padding: 20px;
-  justify-content: space-around;
+/* General Styles */
+html {
+    scroll-behavior: smooth; /* This makes the jumping look like scrolling */
 }
 
-.hero-container {
-  align-items: center; /* Vertically centers the text with the image */
-  justify-content: space-around;
-  padding: 40px; /* Adds space inside the yellow box*/
-  border-radius: 15px;
-  background-color: lightyellow
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #000080;
 }
 
-.header{
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: lightyellow;
+    padding: 15px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+/* Switch container */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+/* Hide default checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Slider background */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 34px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+/* Circle */
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* When ON */
+input:checked + .slider {
+  background-color: #1a2a6c;
+}
+
+input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+.slider::after {
+  content: "🌙";
+  position: absolute;
+  right: 6px;
+  top: 3px;
+  font-size: 12px;
+}
+
+input:checked + .slider::after {
+  content: "☀️";
+  left: 6px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a{
+    color: darkblue;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+/* Default (Light Mode) */
+body {
+  background-color: white;
   color: darkblue;
-  font-family: times new roman;
 }
 
-img{
-  float: right;
-  width: 90px;
-  height: 110px;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 50px;
+/* Dark Mode */
+.dark-mode {
+  background-color: gray;
+  color: black;
 }
 
-
-.buttons{
-  float: right;
- background-color: white;
- color: darkblue;
- font-weight: 500;
- width: 100px;
- border-color: darkblue;
-  margin: 8px;
+.dark-mode #home, .dark-mode #projects,
+.dark-mode #skills, .dark-mode #contacts, .dark-mode #about,
+.dark-mode .navbar, .dark-mode .nav-links a, .dark-mode .hero-buttons a
+.dark-mode .divider{
+    background-color: lightgray;
+    color: black;
 }
 
-.buttons:hover {
-  background-color: lightblue;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow on hover */
-  transform: scale(1.05); /* Slightly increase size */
+/* Main Container */
+.portfolio-container {
+    max-width: 800px;
+    margin: 80px auto 40px; /* 80px top margin to prevent navbar overlap */
+    padding: 20px;
 }
 
-#page2{
-  background-image: url("lightyellow.png");
-  padding:20px;
-  justify-content: space-around;
+/* Sections */
+section {
+    padding: 60px 20px; /* Space between sections */
+    margin-bottom: 20px;
+    background-color: #fdfde0; /* Light yellow */
+    border-radius: 15px;
 }
 
-.table1 {
-  border: 1px white;
-  border-collapse: collapse;
-  background-color: lightgray;
-  padding: 15px;
-  text-align: left;
+/* Hero Section Specifics */
+.hero-header { text-align: center; }
+.divider { width: 80%; border: 0.5px solid #ccc; margin: 20px auto; }
+
+.hero-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
-.table1:hover {
-  background-color: lightblue;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow on hover */
-  transform: scale(1.05); /* Slightly increase size */
-}
 
 #ojt {
+  align-items: center;
   border-radius: 1px;
-  width: 205px;
-  heigth: 150px;
+  width: 270px;
+  heigth: 120px;
 }
 
-.skills{
-  border: 1px white;
-  background-color: lightgray;
-  padding: 7px;
-  margin: 5px;
-  text-align: justify;
-  border-radius: 5px
+/* Skills Tags */
+.tag {
+    display: inline-block;
+    background: lightgray;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 5px;
 }
 
-.skills:hover {
- background-color: lightblue;
+.tag:hover {
+  background-color: lightblue;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow on hover */
-  transform: scale(1.05); 
+  transform: scale(1.05); /* Slightly increase size */
 }
 
-.list{
-  font-weight: bold;
-  color: darkblue; 
- float: center; 
+/* Buttons */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid #000080;
+    text-decoration: none;
+    color: #000080;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #000080;
+    color: white;
+}
+
+
+.contact-form {
+  padding: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  background-color: #1a2a6c;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
 }
