@@ -1,87 +1,115 @@
 <!DOCTYPE html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jan Marc | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<div id= "page1">
-<div class= "hero-container">
 <body>
-  <div  class= "header">
-  <h6 id= "fullname"> Jan Marc Yosalina <br> 1st year BS Computer Science <br>Taguig City, Philippines</h6> 
-  <hr>
-    <img src="Messenger_creation_395B751B-DDCE-4ECE-9AE5-DA5998968974.jpeg" id= "lugu">
-  <h3>Hello, I'm Jan Marc</h3> 
-  
-  <h2>Computer Science Student
-  </h2>
-  <br>
-  <button class="buttons" onclick="showPage2()">About Me</button> 
-  </div>
-</div>
-</div>
-</body>
 
- <script>
-  function showPage2() {
-    document.getElementById("page1").style.display = "none";
-    document.getElementById("page2").style.display = "block";
-  } 
+    <nav class="navbar">
+        
+        <div class="nav-container">
+            <ul class="nav-links">
+                <label class="switch">
+  <input type="checkbox" id="darkToggle">
+  <span class="slider"></span>
+</label>
+                <li><a href="#home">Me</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contacts">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="portfolio-container">
+        
+        <section id="home" class="hero-section">
+            <div class="hero-header">
+                <h1>Jan Marc Yosalina</h1>
+                <p>1st year BS Computer Science | Taguig City, Philippines</p>
+            </div>
+            <hr class="divider">
+            <div class="hero-body">
+                <div class="hero-text">
+                    <h2>Hello, I'm <span>Jan Marc</span></h2>
+                    <h3>Computer Science Student</h3>
+                </div>
+
+            <div class="hero-buttons">
+                <a href="#about" class="btn">About Me</a>
+                <a href="#contacts" class="btn">Contact Me</a>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>About Me</h2>
+            <p>I am a Computer Science student who is currently learning the fundamentals of programming and web development. I am eager to improve my skills through hands-on projects and academic activities. This portfolio reflects my growth and experiences.</p>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h2>Projects/Experiences</h2>
+            <div class="project-card">
+                <h3>Web Design</h3>
+                <img src="ojt.jpeg" alt="Project Screenshot" id="ojt"> <p>As part of my On-the-Job Training (OJT), I built a functional mock website for the Reservist Department of the Philippine Army using XAMPP. The project involved designing the user interface and developing functionality.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="content-section">
+            <h2>Skills</h2>
+            <p>I am currently developing my skills and gaining experience through school projects and activities.</p>
+            <div class="skill-tags">
+                <span class="tag">Programming</span>
+                <span class="tag">Web Development</span>
+            </div>
+        </section>
+
+        <section id="contacts" class="content-section">
+            <h2>Contacts</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:yosalinajanmarc4@gmail.com">yosalinajanmarc4@gmail.com</a></p>
+                <p><strong>Contact Number:</strong> 09687415607</p>
+                <p><strong>Facebook:</strong> <a href="#">Jan Marc Yosalina</a></p>
+            </div>
+            
+            <div class="contact-form">
+  <h2>Send Me a Message</h2>
+
+  <form action="https://formspree.io/f/xqenkrrg" method="POST">
+    
+    <input type="text" name="name" placeholder="Your Name" required>
+    
+    <input type="email" name="email" placeholder="Your Email" required>
+    
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    
+    <button type="submit">Send</button>
+
+  </form>
+</div>
+        </section>     
+        <script>
+const toggle = document.getElementById("darkToggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  toggle.checked = true;
+}
+
+// Toggle event
+toggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (toggle.checked) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
 </script>
-
-
-<! -- About me -->
-<div id="page2" style="display: none;">
-  <div class= "header">
-  <body>
-  <h2>
-    About Me
-  </h2>
-  <p>
-    I am a Computer Science student who is currently learning the fundamentals of programming and web development. I am eager to improve my skills through hands-on projects and academic activities. This portfolio reflects my growth and expericences.
-  </p>
-    
-    <h2> Projects/Experiences</h2>
-    <div class= "table1">
-    <table>
-      <tr>
-        <th style= "text-align: center;">Web Design</th>
-        </tr>
-      
-      <tr>
-       <td><img src= "ojt.jpeg" id= "ojt"> As part of my On-the-Job Training (OJT), I built a functional mock website for the Reservist Department of the Philippine Army using XAMPP. The project involved designing the user interface and developing structured web pages to simulate a real organizational system.
-    </td>
-      </tr>
-    </table>
-    </div>
-    
-   
-    <br>
-    
-    
-    <h2> Skills</h2>
-    <p style= "font-weight:400;">I am currently developing my skills and gaining experience through school projects and activities. While I am still learning, I'm motivated, eager to improve, and always willing to take on new challenges to grow my abilities.</p>
- 
-    <table>
-      <tr>
-        <td class= "skills">Programming Skill</td>
-        <td class= "skills">Team Oriented</td>
-      </tr>
-      <tr>
-        <td class= "skills">Web Development</td>
-        <td class= "skills">Responsible</td>
-      </tr>
-    </table>
-    </div>
-      
-    <div class= "list">
-      <h2>Contacts</h2>
-      <p>Email:</p> <p style= "font-weight:400;">yosalinajanmarc4@gmail.com</p>
-      <p>Contact Number:</p> <p style= "font-weight: 400;">09687415607</p>
-      <p>Facebook:</p> <p style= "font-weight: 400;"><a href= "https://www.facebook.com/share/14cJcg5kjDs/">Jan Marc Yosalina</a></p> 
-      </p>
-  </div>   
-  </div>
 </body>
+</html>
