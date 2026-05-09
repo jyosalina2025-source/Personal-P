@@ -10,6 +10,9 @@ body {
     color: #000080;
 }
 
+h1, h2, h3 {
+    color:#0056B3;
+}
 /* Navigation Bar */
 .navbar {
     position: fixed;
@@ -113,23 +116,23 @@ input:checked + .slider::after {
 
 /* Default (Light Mode) */
 body {
-  background-color: white;
-  color: darkblue;
+  background-color: #F8F9FA;
+  color: #333333;
 }
 
 /* Dark Mode */
 .dark-mode {
-  background-color: gray;
-  color: black;
+  background-color: #1E293B;
+  color: #CBD5E1;
 }
 
 .dark-mode #home, .dark-mode #projects,
 .dark-mode #skills, .dark-mode #contacts, .dark-mode #about,
 .dark-mode .navbar, .dark-mode .nav-links a, .dark-mode .hero-buttons a
-.dark-mode .divider, .dark-mode .project-card, .dark-mode .projects-section h2,
-.dark-mode .project-content h3{
-    background-color: lightgray;
-    color: black;
+.dark-mode .divider, .dark-mode .project-card, .dark-mode .project-content p, .dark-mode h1, 
+.dark-mode h2, .dark-mode h3, .dark-mode .tag, .dark-mode .contact-form text area, .dark-mode .contact-form input{
+    background-color: #0F172A;
+    color: #CBD5E1;
 }
 
 /* Main Container */
@@ -143,8 +146,8 @@ body {
 section {
     padding: 60px 20px; /* Space between sections */
     margin-bottom: 20px;
-    background-color: #fdfde0; /* Light yellow */
-    border-radius: 15px;
+    background-color: #FFFFFF; /* Light yellow */
+    border-radius: 25px;
 }
 
 #about, #projects, #skills, #contacts {
@@ -173,11 +176,6 @@ section {
     padding: 40px 20px;
 }
 
-.projects-section h2{
-    color: #1d1b75;
-    margin-bottom: 25px;
-}
-
 .project-card{
     background: white;
     border-radius: 20px;
@@ -202,31 +200,38 @@ section {
     padding: 25px;
 }
 
-.project-content h3{
-    color: #1d1b75;
-    margin-bottom: 15px;
-}
-
 .project-content p{
     color: #333;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
-
-/* Skills Tags */
-.tag {
-    display: inline-block;
-    background: lightgray;
-    padding: 8px 15px;
-    margin: 5px;
-    border-radius: 5px;
+/* Container to space out the tags nicely */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Space between the tags */
+  margin-top: 15px;
 }
 
-.tag:hover {
-  background-color: lightblue;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow on hover */
-  transform: scale(1.05); /* Slightly increase size */
+/* The individual tag styling */
+.skill-tag {
+  background-color: rgba(56, 189, 248, 0.1); /* A very transparent version of the accent blue */
+  color: var(--accent-color); /* The bright #38BDF8 blue */
+  border: 1px solid rgba(56, 189, 248, 0.3); /* A subtle border to define the shape */
+  padding: 6px 14px;
+  border-radius: 20px; /* Makes the edges perfectly rounded */
+  font-size: 0.9rem;
+  font-weight: 600; /* Makes the text slightly bold */
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease; /* Adds a smooth animation for hover effects */
+}
+
+/* hover effect when someone moves their mouse over the tag */
+.skill-tag:hover {
+  background-color: var(--accent-color);
+  color: #0F172A; /* Changes text to the dark background color */
+  cursor: default;
 }
 
 /* Buttons */
@@ -236,7 +241,7 @@ section {
     padding: 10px 20px;
     border: 1px solid #000080;
     text-decoration: none;
-    color: #000080;
+    color: #4F46E5;
     border-radius: 5px;
 }
 
@@ -247,10 +252,9 @@ section {
 
 .contacts {
   display: flex;
-  gap: 1px;
-  flex-direction: column;
-  align-items: left;   /* centers horizontally */
-  text-align: left;
+  gap: 25px;
+  flex-direction: row;
+  align-items: center;
 }
 
 .contacts i {
@@ -263,24 +267,29 @@ section {
   color: #007bff;
 }
 
+a {
+    color: #0056B3;
+}
 
 .contact-form {
-  padding: 20px;
+  padding: 5px;
 }
 
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
+  width: 35%;
+  margin: 20px 15;
+  padding: 12px;
+  border: 1px;
+    flex-direction: row;
+    align-items: center;
 }
 
 .contact-form button {
   background-color: #1a2a6c;
   color: white;
-  padding: 10px;
+  padding: 5px;
   border: none;
   border-radius: 8px;
+    align-content: right;
 }
