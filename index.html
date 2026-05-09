@@ -54,19 +54,49 @@
             <section id="projects" class="projects-section">
     <h2>Projects/Experiences</h2>
 
+  <div class="projects-container">
+
     <div class="project-card">
-        <img src="ojt.jpeg" alt="Web Design Project" class="project-img">
+        <img src="ojt.jpeg" alt="Web Design">
 
         <div class="project-content">
             <h3>Web Design</h3>
 
             <p>
-                As part of my On-the-Job Training (OJT), I built a functional
-                mock website for the Reservist Department of the Philippine Army
-                using XAMPP. The project involved designing the user interface
-                and developing website functionality.
+                Built a functional mock website for the Philippine Army Reservist
+                Department using XAMPP during OJT.
             </p>
+        </div>
+    </div>
 
+    <div class="project-card">
+        <img src="animation.png" alt="Animation">
+
+        <div class="project-content">
+            <h3>Animation Editing</h3>
+
+            <p>
+                Created simple animations and video edits while improving creativity
+                and visual storytelling skills.
+            </p>
+        </div>
+    </div>
+
+    <div class="project-card">
+        <img src="scratch.jpeg" alt="Game Development">
+
+        <div class="project-content">
+            <h3>Game Development</h3>
+
+            <p>
+               Developed a simple game using Scratch, applying programming fundamentals and game logic.
+            </p>
+        </div>
+    </div>
+
+</div>              
+                
+            
         </div>
     </div>
 </section>
@@ -109,6 +139,60 @@
             <div class="contact-form">
   <h2>Send Me a Message</h2>
 
+  <form action="https://formspree.io/f/xqenkrrg" method="POST">
+    
+    <input type="email" name="email" placeholder="Email:" required>
+    
+    <input name="message" placeholder="Message:" required></textarea>
+    
+    <button type="submit">Send</button>
+
+  </form>
+</div>
+        </section>     
+        <script>
+const toggle = document.getElementById("darkToggle");
+
+// Load saved theme
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  toggle.checked = true;
+}
+
+// Toggle event
+toggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
+
+  if (toggle.checked) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll('section');
+
+  const reveal = () => {
+    const trigger = window.innerHeight * 0.85;
+
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+
+      if (top < trigger) {
+        sec.classList.add('show');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', reveal);
+  reveal(); // run once on load
+});
+</script>    
+            
+        </body>
+</html>
   <form action="https://formspree.io/f/xqenkrrg" method="POST">
     
     <input type="email" name="email" placeholder="Email:" required>
