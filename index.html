@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jan Marc | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +28,7 @@
 
     <main class="portfolio-container">
         
-        <section id="home" class="hero-section">
+        <section id="home" class="hero-section-home">
             <div class="hero-header">
                 <h1>Jan Marc Yosalina</h1>
                 <p>1st year BS Computer Science | Taguig City, Philippines</p>
@@ -50,13 +51,25 @@
             <p>I am a Computer Science student who is currently learning the fundamentals of programming and web development. I am eager to improve my skills through hands-on projects and academic activities. This portfolio reflects my growth and experiences.</p>
         </section>
 
-        <section id="projects" class="content-section">
-            <h2>Projects/Experiences</h2>
-            <div class="project-card">
-                <h3>Web Design</h3>
-                <img src="ojt.jpeg" alt="Project Screenshot" id="ojt"> <p>As part of my On-the-Job Training (OJT), I built a functional mock website for the Reservist Department of the Philippine Army using XAMPP. The project involved designing the user interface and developing functionality.</p>
-            </div>
-        </section>
+            <section id="projects" class="projects-section">
+    <h2>Projects/Experiences</h2>
+
+    <div class="project-card">
+        <img src="ojt.jpeg" alt="Web Design Project" class="project-img">
+
+        <div class="project-content">
+            <h3>Web Design</h3>
+
+            <p>
+                As part of my On-the-Job Training (OJT), I built a functional
+                mock website for the Reservist Department of the Philippine Army
+                using XAMPP. The project involved designing the user interface
+                and developing website functionality.
+            </p>
+
+        </div>
+    </div>
+</section>
 
         <section id="skills" class="content-section">
             <h2>Skills</h2>
@@ -69,11 +82,28 @@
 
         <section id="contacts" class="content-section">
             <h2>Contacts</h2>
-            <div class="contact-info">
-                <p><strong>Email:</strong> <a href="mailto:yosalinajanmarc4@gmail.com">yosalinajanmarc4@gmail.com</a></p>
-                <p><strong>Contact Number:</strong> 09687415607</p>
-                <p><strong>Facebook:</strong> <a href="#">Jan Marc Yosalina</a></p>
-            </div>
+            <div class="contacts">
+  <p>
+    <i class="fas fa-envelope"></i>
+    <a href="mailto:yosalinajanmarc4@gmail.com">
+      yosalinajanmarc4@gmail.com
+    </a>
+  </p>
+                <br>
+  <p>
+    <i class="fas fa-phone"></i>
+    <a href="tel:09687415607">
+      09687415607
+    </a>
+  </p>
+                <br>
+  <p>
+    <i class="fab fa-facebook"></i>
+    <a href="https://www.facebook.com/share/1BE46t99uY/" target="_blank">
+      Jan Marc Yosalina
+    </a>
+  </p>
+</div>
             
             <div class="contact-form">
   <h2>Send Me a Message</h2>
@@ -111,5 +141,26 @@ toggle.addEventListener("change", () => {
   }
 });
 </script>
-</body>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll('section');
+
+  const reveal = () => {
+    const trigger = window.innerHeight * 0.85;
+
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+
+      if (top < trigger) {
+        sec.classList.add('show');
+      }
+    });
+  };
+
+  window.addEventListener('scroll', reveal);
+  reveal(); // run once on load
+});
+</script>    
+            
+        </body>
 </html>
