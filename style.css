@@ -15,7 +15,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: lightyellow;
+    background-color: white;
     padding: 15px 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -126,7 +126,8 @@ body {
 .dark-mode #home, .dark-mode #projects,
 .dark-mode #skills, .dark-mode #contacts, .dark-mode #about,
 .dark-mode .navbar, .dark-mode .nav-links a, .dark-mode .hero-buttons a
-.dark-mode .divider{
+.dark-mode .divider, .dark-mode .project-card, .dark-mode .projects-section h2,
+.dark-mode .project-content h3{
     background-color: lightgray;
     color: black;
 }
@@ -146,6 +147,17 @@ section {
     border-radius: 15px;
 }
 
+#about, #projects, #skills, #contacts {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#about.show, #projects.show, #skills.show, #contacts.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Hero Section Specifics */
 .hero-header { text-align: center; }
 .divider { width: 80%; border: 0.5px solid #ccc; margin: 20px auto; }
@@ -157,13 +169,50 @@ section {
     flex-wrap: wrap;
 }
 
-
-#ojt {
-  align-items: center;
-  border-radius: 1px;
-  width: 270px;
-  heigth: 120px;
+.projects-section{
+    padding: 40px 20px;
 }
+
+.projects-section h2{
+    color: #1d1b75;
+    margin-bottom: 25px;
+}
+
+.project-card{
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover{
+    transform: translateY(-10px);
+}
+
+.project-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.project-content{
+    padding: 25px;
+}
+
+.project-content h3{
+    color: #1d1b75;
+    margin-bottom: 15px;
+}
+
+.project-content p{
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
 
 /* Skills Tags */
 .tag {
@@ -194,6 +243,24 @@ section {
 .btn:hover {
     background-color: #000080;
     color: white;
+}
+
+.contacts {
+  display: flex;
+  gap: 1px;
+  flex-direction: column;
+  align-items: left;   /* centers horizontally */
+  text-align: left;
+}
+
+.contacts i {
+  font-size: 28px;
+  color: #333;
+  transition: 0.3s;
+}
+
+.contacts i:hover {
+  color: #007bff;
 }
 
 
